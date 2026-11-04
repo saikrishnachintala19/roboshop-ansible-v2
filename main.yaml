@@ -2,4 +2,4 @@
   hosts: "{{component}}"
   become: yes
   roles:
-    - "{{component}}"
+    - "{{component}}" #By defalut it checks in the roles folder in current directory
