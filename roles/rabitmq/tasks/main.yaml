@@ -16,7 +16,7 @@
 
     - name: create roboshop user
       community.rabbitmq.rabbitmq_user:
-        user: roboshop
+        user: "{{rabbitmq_user}}"
         password: "{{rabbitmq_password}}"
         vhost: /
         configure_priv: .*
