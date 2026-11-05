@@ -1,4 +1,3 @@
-tasks:
     - name: setup a rebitmq repo file
       copy:
        src: rabbitmq.repo
