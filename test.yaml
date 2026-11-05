@@ -1,0 +1,8 @@
+- hosts: localhost
+  connection: local
+  gather_facts: false
+  vars:
+    sample_name: Sai
+  tasks:
+    - debug:
+        msg: "{{ sample_name }}"
