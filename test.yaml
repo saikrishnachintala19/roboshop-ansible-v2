@@ -5,4 +5,4 @@
     sample_name: Sai
   tasks:
     - debug:
-        msg: {{ sample_name }}
+        msg: "{{ sample_name }}"
