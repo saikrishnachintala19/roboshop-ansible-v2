@@ -1,6 +1,6 @@
 - name: include common role
   include_role: 
-     name: commen
+     name: common
      tasks_from: app-setup
   vars:
       common: catalogue
