@@ -1,0 +1,33 @@
+    - name: Create roboshop  system user
+      user:
+        name: roboshop
+        home: /app
+        system: true
+        shell: /usr/sbin/nologin
+        create_home: false
+        comment: 'roboshop system user'
+    - name: remove existing data
+      file:
+        path: /app
+        state: absent
+
+    - name: remove existing data
+      file:
+        path: /tmp/"{{common}}".zip
+        state: absent
+    
+    - name: create app directory 
+      file:
+        path: /app
+        state: directory
+    
+    - name: download the file from the url
+      get_url:
+         url: https://raw.githubusercontent.com/daws-92s/roboshop-documentation/refs/heads/main/artifacts/"{{common}}"-v4.zip
+         dest: /tmp/"{{common}}".zip
+    
+    - name: Extract local zip file to remote server
+      unarchive:
+        src: /tmp/"{{common}}".zip
+        dest: /app
+        remote_src: yes
