@@ -1,6 +1,7 @@
 - name: print the varibales
   debug:
     msg: "print the current leaning is {{ learning }}"
+    
 - name: application setup
   include_role: 
      name: common
