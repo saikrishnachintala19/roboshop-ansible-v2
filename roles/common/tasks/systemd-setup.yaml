@@ -1,5 +1,5 @@
     - name: copy mongo systmd service file
       template:
-        src: catalog.systemd.service.j2      # Local path (relative to templates/)
-        dest: /etc/systemd/system/catalogue.service # Remote destination path
+        src: "{{component}}.systemd.service.j2"      # Local path (relative to templates/)
+        dest: /etc/systemd/system/{{component}}.service # Remote destination path
         
