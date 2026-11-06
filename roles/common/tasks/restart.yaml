@@ -1,0 +1,9 @@
+- name: Reload systemd manager configuration
+  systemd_service:
+    daemon_reload: true
+
+- name: start and ebale the service
+  systemd_service:
+      name: "{{component}}"
+      state: restarted
+      enabled: true

@@ -3,3 +3,15 @@ ansible_password: "{{ vault_ansible_password }}"
 mysql_root_password: "{{vault_mysql_root_password}}"
 rabbitmq_user: "{{rabbitmq_roboshop_user}}"
 rabbitmq_password: "{{rabbitmq_roboshop_password}}"
+
+mongodb_host: mongo.saikrishna-lab.online
+redis_host: redis.saikrishna-lab.online
+mysql_host: mysql.saikrishna-lab.online
+rabitmq_host: rabitmq.saikrishna-lab.online
+catalog_host: catalog.saikrishna-lab.online
+cart_host: cart.saikrishna-lab.online
+user_host: user.saikrishna-lab.online
+shipping_host: shipping.saikrishna-lab.online
+payment_host: payment.saikrishna-lab.online
+dispatch_host: dispatch.saikrishna-lab.online
+frontend_host: frontend.saikrishna-lab.online
