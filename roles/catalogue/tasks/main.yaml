@@ -1,3 +1,6 @@
+- name: print the varibales
+  debug:
+    msg: "print the current leaning is {{ leaning }}"
 - name: application setup
   include_role: 
      name: common
