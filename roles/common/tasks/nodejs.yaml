@@ -1,0 +1,13 @@
+    - name: diable nodejs
+      command: dnf module disable nodejs -y 
+    - name: enable default nodejs 
+      command: dnf module enable nodejs:24 -y
+    - name: install nodejs
+      package:
+        name: nodejs
+        state: present
+        use: dnf
+    - name: Install npm dependencies in specific directory
+      npm:
+       path: /app
+       state: present

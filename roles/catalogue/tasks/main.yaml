@@ -1,9 +1,14 @@
-- name: include common role
+- name: application setup
   include_role: 
      name: common
      tasks_from: app-setup
-  vars:
-      common: catalogue
+
+- name: nodejs setup
+  include_role:
+     name: common
+     tasks_from: nodejs
+
+  
   
     # - name: diable nodejs
     #   command: dnf module disable nodejs -y 
