@@ -5,6 +5,8 @@ rabbitmq_user: "{{rabbitmq_roboshop_user}}"
 rabbitmq_password: "{{rabbitmq_roboshop_password}}"
 shipping_db_user: "{{ vault_shipping_db_user }}"
 shipping_db_password: "{{ vault_shipping_db_password }}"
+roboshop_payment_user: "{{vault_roboshop_payment_user}}"
+roboshop_payment_password: "{{vault_roboshop_payment_password}}"
 
 mongodb_host: mongo.saikrishna-lab.online
 redis_host: redis.saikrishna-lab.online
