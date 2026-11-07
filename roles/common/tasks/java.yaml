@@ -1,0 +1,25 @@
+     - name: enable a maven module 
+       command: dnf module enable maven:3.9 -y
+    
+     - name: install maven and java 
+       dnf:
+        name:
+         - maven 
+         - java-25-openjdk-devel
+         - mysql
+        state: present
+
+     - name: Install npm dependencies in specific directory
+       command: mvn clean package
+       args:
+         chdir: /app
+       environment:
+         JAVA_HOME: "{{java25.stdout | dirname | dirname }}"
+         MAVEN_OPTS: "-Djdk.tls.namedGroups=\"secp256r1,secp384r1,ffdhe2048\""
+         
+     - name: move the jar file 
+       command: mv target/{{component}}.jar {{component}}.jar
+       args:
+        chdir: /app
+
+      
