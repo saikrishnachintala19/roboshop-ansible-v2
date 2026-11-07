@@ -3,8 +3,8 @@ ansible_password: "{{ vault_ansible_password }}"
 mysql_root_password: "{{vault_mysql_root_password}}"
 rabbitmq_user: "{{rabbitmq_roboshop_user}}"
 rabbitmq_password: "{{rabbitmq_roboshop_password}}"
-shipping-db-user: "{{ vault_shipping-db-user }}"
-shipping-db-password: "{{ vault_shipping-db-password }}"
+shipping_db_user: "{{ vault_shipping-db-user' }}"
+shipping_db_password: "{{ vault_shipping-db-password }}"
 
 mongodb_host: mongo.saikrishna-lab.online
 redis_host: redis.saikrishna-lab.online
