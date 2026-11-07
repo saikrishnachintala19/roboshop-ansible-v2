@@ -7,6 +7,11 @@
       include_role:
         name: common
         tasks_from: java
+
+    - name: configure MySQL data and application user
+      include_role:
+        name: mysql-data
+        tasks_from: mysql
     
     - name: systemd setup
       include_role: 
