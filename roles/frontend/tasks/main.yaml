@@ -1,0 +1,23 @@
+- name: print the varibales
+  debug:
+    msg: "print the current leaning is {{ learning }}"
+    
+- name: application setup
+  include_role: 
+     name: common
+     tasks_from: app-setup
+
+- name: nginx setup
+  include_role:
+     name: common
+     tasks_from: nginx
+    
+- name: systemd setup
+  include_role: 
+      name: common
+      tasks_from: systemd-setup
+
+- name: restart setup
+  include_role: 
+      name: common
+      tasks_from: restart
