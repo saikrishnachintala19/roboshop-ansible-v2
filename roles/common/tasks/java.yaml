@@ -9,12 +9,16 @@
          - mysql
         state: present
 
+     - name: find java25 path
+       shell: readlink -f /usr/lib/jvm/java-25-openjdk*/bin/java | head -1
+       register: java25
+
      - name: Install npm dependencies in specific directory
        command: mvn clean package
        args:
          chdir: /app
        environment:
-         JAVA_HOME: "{{java25.stdout | dirname | dirname }}"
+         JAVA_HOME: "{{ java25.stdout | dirname | dirname }}"
          MAVEN_OPTS: "-Djdk.tls.namedGroups=\"secp256r1,secp384r1,ffdhe2048\""
          
      - name: move the jar file 

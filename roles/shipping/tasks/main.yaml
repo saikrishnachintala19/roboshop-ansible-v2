@@ -13,10 +13,6 @@
         name: common
         tasks_from: systemd-setup
 
-    - name: find java25 path
-      shell: readlink -f /usr/lib/jvm/java-25-openjdk*/bin/java | head -1
-      register: java25
-
     - name: print the output of java25
       debug:
        msg: "print the output {{java25}}"
@@ -26,7 +22,7 @@
     
     - name: perminent set the java25
       copy:
-        content: "export JAVA_HOME= {{java25.stdout | dirname | dirname }}"
+        content: "export JAVA_HOME={{ java25.stdout | dirname | dirname }}"
         dest: /etc/profile.d/java.sh
 
     - name: restart setup
